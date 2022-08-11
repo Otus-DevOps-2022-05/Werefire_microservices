@@ -3,6 +3,31 @@ Werefire microservices repository
 
 ---
 
+## HW №14
+
+* Запуск проекта с помощью docker-compose
+* Запуск проекта в двух сетях
+
+
+    networks:
+      - front_net
+      - back_net
+* Параметризация переменных окружения с помощью файла .env
+
+
+    USERNAME=your-dockerhub-login
+    UI_PORT=80
+    MONGO_VER=3.2
+    FRONTNET_SUBNET_PREF=10.0.1.0/24
+    BACKNET_SUBNET_PREF=10.0.2.0/24
+
+* Имя проекта формируется из имени корневой папки с docker-compose
+  * Ключ -p меняет это имя
+    * `docker-compose -p Имя-проекта up -d`
+
+
+---
+
 ## HW №13
 
 * Приложение разделено на несколько компонентов в разных докер-образах
