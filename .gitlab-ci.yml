@@ -24,7 +24,6 @@ test_unit_job:
   script:
     - ruby simpletest.rb
 
-
 test_integration_job:
   stage: test
   script:
