@@ -3,6 +3,31 @@ Werefire microservices repository
 
 ---
 
+## HW №15
+
+* Собран инстанс в YC (использовался cpu=2 ram=8)
+* Gitlab-CI развернут в Docker Swarm с 4 runner
+
+
+    docker-machine create --driver generic --generic-ip-address=51.250.72.234 --generic-ssh-user appuser --generic-ssh-key C:/Users/NAME/.ssh/appuser docker-host
+    docker-machine ls
+    docker-machine env docker-host
+    @FOR /f "tokens=*" %i IN ('"C:\ProgramData\chocolatey\lib\docker-machine\bin\docker-machine.exe" env docker-host') DO @%i
+    docker-machine ls
+    docker swarm init
+    docker stack deploy --compose-file docker-compose.yml mystack
+
+* Зарегистрированы Gitlab-runner Gitlab-CI. В ходе выполнения добавлял раннеры для параллелизма
+
+
+    docker exec -it mystack_gitlab-runner.1.q8d7ajvqmrrmbq31x0119xh0y gitlab-runner register --url http://51.250.72.234/ --non-interactive --locked=false --name DockerRunner --executor docker --docker-image alpine:latest --registration-token GR1348941J2syT-wGUEgx8GQeScdF --tag-list "linux,xenial,ubuntu,docker" --run-untagged
+
+
+* В .gitlab-ci.yml использовано динамическое окружение
+
+
+---
+
 ## HW №14
 
 * Запуск проекта с помощью docker-compose
