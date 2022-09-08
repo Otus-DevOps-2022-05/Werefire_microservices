@@ -9,20 +9,29 @@ services:
         aliases:
           - post_db
           - comment_db
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
 
   ui:
     #build: ./ui
-    image: ${USERNAME}/ui:latest
+    image: ${USERNAME}/ui:${UI_BUILD_TAG}
     ports:
       - ${UI_PORT}:9292/tcp
     networks:
       front_net:
         aliases:
           - ui
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.ui
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
 
   post:
     #build: ./post-py
-    image: ${USERNAME}/post:latest
+    image: ${USERNAME}/post:${POST_BUILD_TAG}
     networks:
       front_net:
         aliases:
@@ -30,10 +39,17 @@ services:
       back_net:
         aliases:
           - post
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: service.post
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
 
   comment:
     #build: ./comment
-    image: ${USERNAME}/comment:latest
+    image: ${USERNAME}/comment:${COMMENT_BUILD_TAG}
     networks:
       front_net:
         aliases:
@@ -41,6 +57,8 @@ services:
       back_net:
         aliases:
           - comment
+    environment:
+      - ZIPKIN_ENABLED=${ZIPKIN_ENABLED}
 
   prometheus:
     image: ${USERNAME}/prometheus
