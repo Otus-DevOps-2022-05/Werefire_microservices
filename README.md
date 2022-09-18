@@ -3,6 +3,17 @@ Werefire microservices repository
 
 ---
 
+## HW №18
+
+* Компоненты Kubernetes развернуты вручную с помощью kubeadm
+* Базовые YAML манифесты добавлены и проверены в Kubernetes
+* Использвана документация kubeadm https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+* Изучена разница Kubernetes 1.19 и 1.25 и варианты запуска в k8s на локальной машине
+* Испытана боль запуска разворачивания k8s wsl2 в win11. docker & containerD
+* Испытано Docker Desktop Kubernetes
+
+---
+
 ## HW №17
 
 * Подготовлено окружение
