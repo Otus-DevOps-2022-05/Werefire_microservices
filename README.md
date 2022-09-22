@@ -3,6 +3,17 @@ Werefire microservices repository
 
 ---
 
+## HW №19
+
+* Развернуто локальное окружение для работы с Kubernetes
+  * minikube 1.19
+* Развернут Kubernetes в Yandex Cloud
+  * смотрится дорохо-бохато
+* Деплой reddit в Kubernetes Yandex Cloud
+  * деплойменты и сервисы из  локального minikube, без изменений, запущены в Kubernetes Yandex Cloud
+
+---
+
 ## HW №18
 
 * Компоненты Kubernetes развернуты вручную с помощью kubeadm
