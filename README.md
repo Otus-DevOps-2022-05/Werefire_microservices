@@ -5,7 +5,7 @@ Werefire microservices repository
 
 ## HW №20
 
-Добавлены k8s манифесты
+Добавлены k8s манифесты.
 
 * Ingress Controller
 * Ingress
