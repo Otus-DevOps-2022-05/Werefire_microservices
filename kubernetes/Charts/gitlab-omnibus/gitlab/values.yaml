@@ -51,7 +51,7 @@ global:
     domain: example.com
     hostSuffix:
     https: true
-    externalIP: 51.250.83.71
+    externalIP:
     ssh: ~
     gitlab: {}
     minio: {}
