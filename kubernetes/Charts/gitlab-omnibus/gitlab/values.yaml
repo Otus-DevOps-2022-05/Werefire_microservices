@@ -51,7 +51,7 @@ global:
     domain: example.com
     hostSuffix:
     https: true
-    externalIP:
+    externalIP: 51.250.83.71
     ssh: ~
     gitlab: {}
     minio: {}
@@ -785,10 +785,10 @@ upgradeCheck:
       cpu: 50m
 
 ## Settings to for the Let's Encrypt ACME Issuer
-# certmanager-issuer:
-#   # The email address to register certificates requested from Let's Encrypt.
-#   # Required if using Let's Encrypt.
-#   email: email@example.com
+certmanager-issuer:
+ # The email address to register certificates requested from Let's Encrypt.
+ # Required if using Let's Encrypt.
+ email: me@example.com
 
 ## Installation & configuration of jetstack/cert-manager
 ## See requirements.yaml for current version
@@ -1028,7 +1028,7 @@ postgresql:
   install: true
   postgresqlDatabase: gitlabhq_production
   image:
-    tag: 12.7.0
+    tag: 13.6.0
   usePasswordFile: true
   existingSecret: bogus
   initdbScriptsConfigMap: bogus
