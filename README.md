@@ -3,6 +3,14 @@ Werefire microservices repository
 
 ---
 
+## HW №21
+
+* Работа с Helm. Добавлены чарты
+* Развертывание Gitlab в Kubernetes.
+* Запуск CI/CD конвейера в Kubernetes.
+
+---
+
 ## HW №20
 
 Добавлены k8s манифесты.
